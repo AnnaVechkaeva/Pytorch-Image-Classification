@@ -49,3 +49,16 @@ By default the parameters are set as follows:
   --seed            2020
 ```
 
+## Some Experiments
+
+In the following example the model is trained for 15 epochs using batch size 8. The other parameters are default.
+
+```
+python img_classification.py --batch_size 8 --epochs 15 --train --eval
+```
+
+Traing with this parameters gives the following results:
+
+```
+Test accuracy: 0.8809
+```
