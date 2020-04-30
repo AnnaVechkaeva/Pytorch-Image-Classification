@@ -1,6 +1,6 @@
 # Pytorch Image Classification
 
-As of now, it supports only MNIST dataset is used for training and evaluation.
+As of now, only MNIST dataset is used for training and evaluation.
 
 ## Training and evaluationg
 
