@@ -20,7 +20,7 @@ Model(
 )
 ```
 
-The model graph can be found in ```./graph.pdf``` (was made using ```torchviz``` from https://github.com/szagoruyko/pytorchviz)
+The model graph can be found in [graph.pdf](graph.pdf) (was made using ```torchviz``` from https://github.com/szagoruyko/pytorchviz)
 
 ## Training and evaluationg
 
