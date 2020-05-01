@@ -22,6 +22,8 @@ Model(
 
 The model graph can be found in [graph.pdf](graph.pdf) (was made using ```torchviz``` from https://github.com/szagoruyko/pytorchviz)
 
+<img src="https://github.com/AnnaVechkaeva/Pytorch-Image-Classification/blob/master/graph.png" data-canonical-src="https://github.com/AnnaVechkaeva/Pytorch-Image-Classification/blob/master/graph.png" width="300" height="600" />
+
 ## Training and evaluationg
 
 To run training:
