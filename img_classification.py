@@ -126,4 +126,6 @@ if __name__ == "__main__":
 	#writer.add_graph(model, images)
 	#writer.close()
 	print(model)
-	make_dot(model(image), params=dict(model.named_parameters())).render("graph")
+	dot = make_dot(model(image), params=dict(model.named_parameters()))
+	dot.format = "png"
+	dot.render("graph")
