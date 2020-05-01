@@ -2,6 +2,24 @@
 
 As of now, only MNIST dataset is used for training and evaluation.
 
+## Model Architecture
+
+```
+Model(
+  (net): Sequential(
+    (0): Linear(in_features=784, out_features=300, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Linear(in_features=300, out_features=300, bias=True)
+    (3): ReLU(inplace=True)
+    (4): Linear(in_features=300, out_features=200, bias=True)
+    (5): ReLU(inplace=True)
+    (6): Linear(in_features=200, out_features=10, bias=True)
+    (7): Softmax(dim=1)
+  )
+  (criterion): NLLLoss()
+)
+```
+
 ## Training and evaluationg
 
 To run training:
