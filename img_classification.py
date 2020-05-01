@@ -9,7 +9,9 @@ from torchvision import transforms
 from tqdm import tqdm
 import argparse
 import os
-
+import torchvision
+from torch.utils.tensorboard import SummaryWriter
+from torchviz import make_dot
 
 class MNISTLoader:
 	def __init__(self, batch_size):
@@ -37,7 +39,7 @@ class Model(nn.Module):
 		return x
 
 
-	def train(self, lr, epochs, dataset):
+	def train_(self, lr, epochs, dataset):
 		print("Training:")
 		for epoch in range(epochs):
 			criterion = self.criterion
@@ -96,7 +98,7 @@ if __name__ == "__main__":
 
 	if args.train:
 		model = Model()
-		model.train(args.learning_rate, args.epochs, data)
+		model.train_(args.learning_rate, args.epochs, data)
 		try:
 			os.mkdir(args.output_dir)
 		except:
@@ -107,9 +109,21 @@ if __name__ == "__main__":
 		model = Model()
 		model.load_state_dict(torch.load(args.model), strict=False)
 
+	
+
 	if not args.train and not args.model:
 		print("You haven't chosen or trained a model")
 		exit()	
 
 	if args.eval:
 		model.evaluate(data)
+
+	#writer = SummaryWriter()
+	images, labels = next(iter(data.train))
+	image = images[0].view(1, 784)
+	#grid = torchvision.utils.make_grid(images)
+	#writer.add_image("images", grid, 0)
+	#writer.add_graph(model, images)
+	#writer.close()
+	print(model)
+	make_dot(model(image), params=dict(model.named_parameters())).render("graph")
